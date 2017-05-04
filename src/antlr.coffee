@@ -14,6 +14,8 @@ ANTLR_PARSER_COLLECTION = {
   'JavaParser': require('../antlr/JavaParser'),
   'CLexer': require('../antlr/CLexer'),
   'CParser': require('../antlr/CParser'),
+  'CPP14Lexer': require('../antlr/CPP14Lexer'),
+  'CPP14Parser': require('../antlr/CPP14Parser'),
   'jvmBasicLexer': require('../antlr/jvmBasicLexer'),
   'jvmBasicParser': require('../antlr/jvmBasicParser'),
 }
