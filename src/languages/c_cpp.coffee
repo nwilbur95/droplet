@@ -363,7 +363,6 @@ REMOVE_SEMICOLON = (leading, trailing, node, context) ->
   trailing trailing().replace /\s*;\s*$/, ''
 
 config.PAREN_RULES = {
-  ###
   'primaryExpression': {
     'expression': ADD_PARENS
   },
@@ -373,7 +372,6 @@ config.PAREN_RULES = {
   'postfixExpression': {
     'specialMethodCall': REMOVE_SEMICOLON
   }
-  ###
   ###
   # These two rules seem to be wrong and I don't
   # remember why I put them here in the first place.
@@ -465,12 +463,6 @@ config.COLOR_CALLBACK = (opts, node) ->
     return 'declaration'
 
   name = getMethodName node
-  
-  if name?
-    return 'functionCall'
-  if COLOR_RULES[node.type]?
-    return COLOR_RULES[node.type]
-  return null
 
   if name?
     return 'functionCall'
@@ -805,4 +797,4 @@ config.lockedSocketCallback = (opts, socketText, parentText, parseContext) ->
   else
     return parentText
 
-module.exports = parser.wrapParser antlrHelper.createANTLRParser 'C', config
+module.exports = parser.wrapParser antlrHelper.createANTLRParser 'CPP14', config
